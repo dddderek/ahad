@@ -2,9 +2,11 @@
 
 [*Altadena Heritage*](http://altadenaheritage.org/)
 
-Existing database: [Altadena Heritage Property Database](http://altadenaheritagepdb.org/)
+Old website: [Altadena Heritage Property Database](http://altadenaheritagepdb.org/)
 
-This Rails website being developed by 
+New website: [The New Altadena Heritage Property Database](http://ahad.altadenaheritagepdb.org/)
+
+This Rails website is being developed by 
 [Derek Carlson](http://www.consciouscomputerconsulting.com/) and Dick Rubin.
 
 * System dependencies:
