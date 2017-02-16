@@ -3,7 +3,9 @@
 [Note to recruiters / potential employers perusing this code: I develop this
 project in a private repo on BitBucket, so I just copied the latest version
 over to GitHub so that my code could be publicly viewed in the most conventional
-place.  I'd be glad to share the BitBucket repo upon request.]
+place.  I'd be glad to share the BitBucket repo upon request.  I also store
+copious Dev Notes in Evernote and am glad to share that notebook upon
+request as well.  Long live Dev Notes!  Well worth the energy!]
 
 [*Altadena Heritage*](http://altadenaheritage.org/)
 
