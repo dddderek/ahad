@@ -1,0 +1,52 @@
+/////////////////////////////////////////////////////////////////////////////
+// application_layout.scss
+//
+// Place all the styles related to the site-wide application layout.
+//
+/////////////////////////////////////////////////////////////////////////////
+
+// Globals used only in this file
+// Globals used also in other files
+$g-app-layout-ah-auto-shrink-threshold-width: 570px;
+// At 570px, the height of the image is the same as the 90%
+// height when it starts to shrink with narrower width.  Discovered
+// empirically.
+
+/****************************************************************************
+ * White translucent fixed header bar at top w/AH logo 
+ ****************************************************************************/
+
+/* 
+ * [1] Remove padding-top:10px to match layout when served from file directly 
+ */
+#app-layout-header-bar {
+  background-color: rgba(255, 255, 255, 0.75);
+  box-shadow: 5px 5px 5px #888888;
+  color: red;
+  /* height: 80px; // Not needed.  Sized via code in resizeBGImgRootHome() */
+  left: 0px;
+  padding-top: 10px; /* [1] */
+  position: fixed;
+  top : 0px;
+  width: 100%; 
+  z-index: 1000;
+}
+
+  /* [LOGO] Altadena Heritage */
+  #app-layout-ah-header-logo-img {
+    background: transparent;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 10px 10px;
+    /* 20px 10px 10px 10px to match size when served from file directly */
+    width: 500px; /* 480px to match size when served from file directly */
+  }
+  
+    @media screen and
+      (max-width: $g-app-layout-ah-auto-shrink-threshold-width) {
+      #app-layout-ah-header-logo-img {
+        width: 90%;
+      }
+    }
+

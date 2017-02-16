@@ -1,0 +1,40 @@
+<!DOCTYPE html lang="en">
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application',
+      'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300',
+       media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= stylesheet_link_tag    'application',
+      'https://fonts.googleapis.com/css?family=Gafata',
+       media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= stylesheet_link_tag    'application',
+      'https://fonts.googleapis.com/css?family=Assistant',
+       media: 'all', 'data-turbolinks-track' => true %>
+
+    <%= favicon_link_tag 'ah-logo.ico' %>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  </head>
+
+  <body>
+    <!-- Fixed translucent title bar at top -->
+    <div id="app-layout-header-bar">
+      <a href="http://altadenaheritage.org/" target="_">
+        <%= image_tag("ahad-header-logo-from-website-alpha-2.png", 
+            :id => "app-layout-ah-header-logo-img",
+            :alt => "AHAD Header Logo") %>
+      </a>
+    </div>
+    <%= yield %>
+  </body>
+</html>

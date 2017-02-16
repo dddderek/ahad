@@ -1,0 +1,366 @@
+/////////////////////////////////////////////////////////////////////////////
+// properties.scss
+// 
+// Place all the styles related to the Properties controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+/////////////////////////////////////////////////////////////////////////////
+
+// Globals used only in this file
+$g-ps-width-pct-for-wide-screens: 50%;  // width for content, switches at
+$g-ps-width-pct-for-small-screens: 90%; // $g-screen-width-min-desktop px
+$g-hanging-indent-px: 30px;
+$g-title-size-wide-screen: 38px; 
+$g-title-size-small-screen: 28px; 
+
+$g-screen-width-min-desktop: 880px;
+// When the browser is smaller than min-desktop width, make the
+// content area cover $g-ps-width-pct-for-small-screens of the screen,
+// and the font size for the title and content shrinks as well.
+// This covers smaller desktop browser windows, as well as pads
+// and phones, so no need to specify for each.
+
+/*-------------------------------------------------------------------------*\
+
+  Common to all property pages
+
+\*-------------------------------------------------------------------------*/
+
+//
+// Little "Search Again >>" button that sneaks in at the
+// bottom of the screen.
+//
+#prop-search-again-container {
+  bottom: 0;
+  left: 50%;
+  margin-left: -100px;
+  position: fixed ;
+  width: 200px;
+}
+
+
+/*-------------------------------------------------------------------------*\
+  #property#show
+  
+  View a single property page.
+\*-------------------------------------------------------------------------*/
+
+//
+// Address at top that zooms and fades in upon page load
+//
+
+/* [1] These are controlled via JavaScript by adding/removing the
+ * psatzc-pre-animate and psatzc-animate-in classes.
+ */
+#ps-addr-title-zoom-container {
+  background-color: rgba(255,255,255, .7);
+  border-radius: 10px 10px 10px 10px;
+  display: block; 
+  margin-left:  auto;
+  margin-right: auto;
+  opacity: 1;             /* [1] */
+  padding-top: 80px;
+  position: relative; 
+  transform: scale(1, 1); /* [1] */
+  width: 58%;
+}
+
+  #ps-addr-title-zoom-container.psatzc-pre-animate {
+    opacity: 0;
+    transform: scale(3, 3);
+  }
+  
+  #ps-addr-title-zoom-container.psatzc-animate-in {
+    opacity: 1.0;
+    transform : scale(1, 1);
+            transition: 1.0s ease-out;
+    -webkit-transition: 1.0s ease-out;
+  }
+  
+  #ps-addr-title-zoom {
+    font-size: $g-title-size-wide-screen;
+    text-align: center;
+    text-shadow: 4px 4px 4px #aaa;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #ps-addr-title-zoom-container {
+      width: 88%;
+    }
+    
+    // Shrink title size on small screens
+    #ps-addr-title-zoom {
+      font-size: $g-title-size-small-screen;
+    }
+  }
+
+//
+// Address at top that fades in when the initial address scrolls
+// off the top of the page, and that fades out when the initial
+// address scrolls back onto the page.
+//
+  
+/* 'width' set depending on text inside in property.js | 
+ * resizeWindowPropertyView(), 'top' (distance from header)
+ * also set dynamically.
+ */
+#ps-addr-title-fader {
+  background-color: white;
+  border-color: rgba(0, 0, 0,.6);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 2px;
+  font-size: 34px;
+  font-weight: bold;
+  left: 0px;
+  margin-left:  auto;
+  margin-right: auto;
+  opacity: 0;
+  padding-left:  10px;
+  padding-right: 10px;
+  position: fixed;
+  right: 0px;
+  text-align: center;
+  text-shadow: 4px 4px 4px #aaa;
+  top: 100px; // see comment above
+}
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #ps-addr-title-fader {
+      font-size: $g-title-size-small-screen;
+    }
+  }
+  
+//
+// Photo of Property
+//
+
+#ps-photo-main-container {  
+  margin-bottom: 20px;
+  margin-left:  auto;
+  margin-right: auto;
+  opacity: 1; /* Note: opacity animated in event turbolinks:load */
+  width: $g-ps-width-pct-for-wide-screens;
+}
+
+  #ps-photo-main-no-photo {
+    text-align: center;
+  }
+  
+  #ps-photo-main {  
+    border: 1px solid grey;
+    box-shadow: 5px 5px 5px #888888;  
+    width: 100%;
+  }
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #ps-photo-main-container {  
+      width: $g-ps-width-pct-for-small-screens;
+    }
+  }
+
+//
+// PDF generation Please Wait spinner
+//
+
+#ps-pdf-please-wait-container {
+    background: transparent;
+    display: none; /* turned on via Javascript, otherwise obscures everything */
+    height:100%;
+    left: 0px;
+    position:fixed;
+    top: 0px;
+    width:100%;
+}    
+
+#ps-pdf-please-wait {
+    background-color: rgba(255,255,255,.85);
+    border-color: rgba(55,55,55,.2);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+    display: none; /* turned on via Javascript, otherwise obscures everything */
+    left:35%;
+    margin-top:-30px;
+    position:absolute;
+    padding: 5px;
+    text-align: center;
+    top:50%;
+    width:30%; /* each X% decrease in width, increase 'left' by X/2% */
+}
+
+//
+// All the property related text below the main photo
+//
+
+#ps-dl-pdf-img {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#ps-db-details {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-left:  auto;
+  margin-right: auto;
+  opacity: 1;
+  width: $g-ps-width-pct-for-wide-screens;
+}
+
+  .hanging-indent {
+    padding-left: $g-hanging-indent-px;
+    text-indent: -$g-hanging-indent-px;
+  }
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #ps-db-details {
+      font-size: 22px;
+      width: $g-ps-width-pct-for-small-screens;
+    }
+  }
+
+  .ps-details-titles {
+    color: gray;
+  }
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+     .ps-details-titles {
+      font-size: 22px;
+    }
+  }
+
+#ps-note-sources {
+  font-size: 16px;
+}
+
+//
+// Animated dropdown accordion display of has_many relationships
+// (e.g. additionalarchitects, etc.)
+//
+
+// From: http://uniondesign.ca/simple-accordion-without-jquery-ui/
+.accordion-toggle {cursor: pointer; margin: 0;}
+.accordion-content {display: none;}
+.accordion-content__default {display: none;}
+.accordion-content__indent {margin-left: 10px;};
+
+table {
+  font-family: $g-font-family-default;
+  font-size: 20px;
+  border-color: rgba(0, 0, 0,.2);
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+
+}
+
+table th {
+  color: black;
+  font-weight: bold;
+}
+
+
+table td {
+  color: black;
+}
+
+//
+// Google map at bottom
+//
+
+#map {  /* #googlemap */
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px #888888;  
+  height: 300px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1;
+  width: $g-ps-width-pct-for-wide-screens;
+}
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #map { /* #googlemap */  
+      width: $g-ps-width-pct-for-small-screens;
+    }
+  }
+
+/*-------------------------------------------------------------------------*\
+  #property not found page
+
+\*-------------------------------------------------------------------------*/
+
+#pnf-container {  
+  margin-left:  auto;
+  margin-right: auto;
+  width: $g-ps-width-pct-for-wide-screens;
+}
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #pnf-container {  
+      width: $g-ps-width-pct-for-small-screens;
+    }
+  }
+
+/* 'margin-top' scaled automatically via Javascript in
+ * properties.js | resizeWindowEventPropertyNotFound()
+ * when screen gets narrow enough for header to start shrinking
+ */
+#pnf-title {
+  font-size: $g-title-size-wide-screen;
+  text-align: center;  
+  text-shadow: 4px 4px 4px #aaa;
+  margin-top: 100px; // see comment above
+} 
+
+  @media screen and (max-width: $g-screen-width-min-desktop) {
+    #pnf-title {  
+      font-size: $g-title-size-small-screen;
+    }
+  }
+
+#pnf-cartoon-house {
+  text-align: center;  
+}
+
+/* margin-bottom set otherwise the "Search Again" fixed button at the bottom
+ * can lay over the last lines of the explanation, and you can't scroll down
+ * to see what those last lines say.  With the extra margin, there's room
+ * to scroll.
+ */
+#pnf-explanation {
+  margin-bottom: 100px;
+  margin-top: 20px;  
+}
+
+#pnf_suggested_container {
+    background-color: white;
+    border-color: rgba(55,55,55,.9);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 1px;
+    display: table;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#pnf_suggested_photo {
+    height: auto;
+    padding-left: 5px;
+    padding-right: 10px;
+    width: 80px;
+}
+
+#pnf_suggested_addr {
+    display: table-cell;
+    vertical-align: middle;
+}

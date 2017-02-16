@@ -1,0 +1,25 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ * Below, require_tree turned OFF (notice = is missing), so we can manually
+ * require each scss file in main.scss in a specific order. This idea
+ * came from: http://www.mattboldt.com/organizing-css-and-sass-rails/
+ * 
+ * NOTE: Now, if you add a new css or scss file to the directory tree,
+ *       you need to MANUALLY add it in an @import command in main.scss.
+ *
+ *  require_tree .       
+ *= require_self         
+ *= require select2.min  
+ *= require main
+ */
+

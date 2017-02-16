@@ -1,0 +1,21 @@
+/////////////////////////////////////////////////////////////////////////////
+// main.scss
+//
+// Use this file to manually include all the scss files needed in your
+// project (this is needed because we removed *= require_tree . from
+// application.css).  This allows us to a) specify the order in which
+// the scss files just included, and b) allows us to put global variables
+// and mixins into files like mixins.scss and globals.scss and have
+// them be available to all other scss files via @import commands at 
+// the top.
+//
+// This organization idea comes from
+// http://www.mattboldt.com/organizing-css-and-sass-rails
+//
+/////////////////////////////////////////////////////////////////////////////
+@import "base/mixins.scss";
+@import "base/globals.scss";
+@import "styles/application_layout.scss";
+@import "styles/common.scss";
+@import "styles/static_pages.scss";
+@import "styles/properties.scss";
