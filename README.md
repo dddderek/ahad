@@ -3,7 +3,7 @@
 [Note to recruiters / potential employers perusing this code: I develop this
 project in a private repo on BitBucket, so I just copied the latest version
 over to GitHub so that my code could be publicly viewed in the most conventional
-place. I'd be glad to share the BitBucket repo upon request.]
+place.  I'd be glad to share the BitBucket repo upon request.]
 
 [*Altadena Heritage*](http://altadenaheritage.org/)
 
