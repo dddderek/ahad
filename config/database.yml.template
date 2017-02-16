@@ -72,7 +72,4 @@ test:                           # :testsqlite
 #
 production:
   <<: *default
-  database: [FILL IN]
-  username: [FILL IN]
-  password: <%= ENV['DATABASE_URL'] %>
-  host:     [FILL IN]
+  url: <%= ENV['DATABASE_URL'] %>
