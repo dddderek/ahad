@@ -1,5 +1,10 @@
 # Altadena Heritage Architectural Database Rails Website
 
+[Note to recruiters / potential employers perusing this code: I develop this
+project in a private repo on BitBucket, so I just copied the latest version
+over to GitHub so that my code could be publicly viewed in the most conventional
+place.]
+
 [*Altadena Heritage*](http://altadenaheritage.org/)
 
 Old website: [Altadena Heritage Property Database](http://altadenaheritagepdb.org/)
